@@ -4,6 +4,8 @@ import cors from "cors";
 import { auth } from "./lib/auth";
 import { toNodeHandler } from "better-auth/node";
 import router from "./routes/routes";
+import globalErrorHandler from "./error/globalErrorHandler";
+import notFound from "./error/notfound";
 
 dotenv.config();
 
@@ -14,5 +16,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/v1", router);
+
+app.use(globalErrorHandler);
+app.use(notFound);
 
 export default app;
