@@ -1,0 +1,14 @@
+model FOOD {
+    id               Int      @id @default(autoincrement())
+    food_name        String
+    food_description String?
+    food_image       String?
+    provider         PROVIDER @relation(fields: [providerId], references: [id], onDelete: Cascade)
+    providerId       String
+    order_count      Int      @default(0)
+    category         CATEGORY @relation(fields: [categoryId], references: [id])
+    categoryId       String
+    price            Float
+    createdAt        DateTime @default(now())
+    updatedAt        DateTime @updatedAt
+}

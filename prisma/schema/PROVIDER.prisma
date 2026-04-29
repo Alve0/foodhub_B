@@ -1,0 +1,18 @@
+model PROVIDER {
+    id                    String   @id @default(uuid()) @db.Uuid
+    user_Id               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+    userId                String   @unique
+    restaurant_name       String?  @db.VarChar(255)
+    restaurant_address    String?  @db.VarChar(255)
+    resturant_phone       Int?     @unique @db.Integer
+    resurant_icon         String?  @db.VarChar(255)
+    resurant_background   String?  @db.VarChar(255)
+    resturant_description String?  @db.VarChar(255)
+    foods                 FOOD[]
+    status                STATUS   @default(ACTIVE)
+    createdAt             DateTime @default(now())
+    updatedAt             DateTime @updatedAt
+
+    @@index([userId, id, status])
+    @@map("provider")
+}

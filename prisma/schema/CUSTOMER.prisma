@@ -1,0 +1,13 @@
+model CUSTOMER {
+    id        String   @id @default(uuid()) @db.Uuid
+    user_Id   User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+    userId    String   @unique
+    address   String?  @db.VarChar(255)
+    phone     Int?     @unique @db.Integer
+    status    STATUS   @default(ACTIVE)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@index([userId, id, status])
+    @@map("customer")
+}

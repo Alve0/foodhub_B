@@ -448,21 +448,19 @@ The provider status-update endpoint is the only endpoint related to the lifecycl
 
 ### Requirements with no matching endpoint
 
-* Cart management (`/cart` page exists, but no cart API is defined)
-* Checkout-specific endpoint (`/checkout` page exists, but order creation is the only related API)
-* Leave reviews after ordering
-* Customer profile update
-* Provider “view incoming orders”
-* Admin “view all orders”
-* Admin “manage categories”
-* Category CRUD APIs
-* Review CRUD APIs
-* Provider profile update/create APIs
-* Order cancellation endpoint, despite `CANCELLED` being in the status flow
+- Cart management (`/cart` page exists, but no cart API is defined)
+- Checkout-specific endpoint (`/checkout` page exists, but order creation is the only related API)
+- Leave reviews after ordering
+- Customer profile update
+- Provider “view incoming orders”
+- Admin “view all orders”
+- Admin “manage categories”
+- Category CRUD APIs
+- Review CRUD APIs
+- Provider profile update/create APIs
+- Order cancellation endpoint, despite `CANCELLED` being in the status flow
 
 ### Endpoints with no fully explicit functional requirement
 
-* `GET /api/auth/me` is implied by profile and session needs, but not stated as a standalone feature
-* `GET /api/providers` and `GET /api/providers/:id` are implied by browsing requirements, but the specs do not separately name provider listing as a feature beyond public browsing
-
-If you want, I can turn this into a more formal SRS-style document with numbered sections, acceptance criteria, and a tighter endpoint matrix.
+- `GET /api/auth/me` is implied by profile and session needs, but not stated as a standalone feature
+- `GET /api/providers` and `GET /api/providers/:id` are implied by browsing requirements, but the specs do not separately name provider listing as a feature beyond public browsing

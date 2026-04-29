@@ -1,5 +1,7 @@
+import { IUserData } from "./auth.interface";
 
+const register = async (data: IUserData) => {};
 
-const register = async(data)=> {
-    const userData = 
-}
+export const authService = {
+  register,
+};

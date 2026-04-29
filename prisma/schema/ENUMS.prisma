@@ -1,0 +1,12 @@
+enum ROLE {
+    CUSTOMER
+    ADMIN
+    PROVIDER
+}
+
+enum STATUS {
+    ACTIVE
+    INACTIVE
+    BANNED
+    SOFT_BANNED
+}
